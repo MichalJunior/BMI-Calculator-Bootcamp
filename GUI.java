@@ -6,4 +6,5 @@ public class GUI {
         System.out.print("Welcome in BMI Calculator \n"+a+"\n"+b+"\n"+c+"\n"+"Insert your choice:");
 
     }
+
 }

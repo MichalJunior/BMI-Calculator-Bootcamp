@@ -13,6 +13,7 @@ public class BmiApplication {
                     bmiCalculator.printBMI();
                     bmiDB.addToDB();
                     bmiDB.printID();
+                    System.out.println(bmiCalculator.judgeBMI());
                 }
                 case 2 -> {
                     System.out.print("Insert your ID:");
@@ -20,7 +21,7 @@ public class BmiApplication {
 
                 }
                 case 3 -> System.exit(0);
-                default -> System.out.println("Wrong choice");
+                default -> System.out.println("---Wrong credential---");
             }
             System.out.println("------------------");
         }

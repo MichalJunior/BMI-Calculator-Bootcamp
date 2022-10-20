@@ -18,6 +18,21 @@ public class BmiCalculator {
 
     }
 
+    public String judgeBMI() {
+        BMI=getBMI();
+
+        if (BMI < 18.5) {
+            return "--UDERWEIGHT--";
+        }
+        if (BMI >= 18.5 && BMI < 24.9) {
+            return "--CORRECT WEIGHT--";
+        }
+        if (BMI >= 24.9)
+            return "--OVERWEIGHT--";
+        else throw new IllegalArgumentException("SOmething gone Wrong");
+
+    }
+
     public int takeWeightFromUser() {
 
         System.out.print("Insert your weight[kg]: ");
@@ -33,7 +48,7 @@ public class BmiCalculator {
         BmiCalculator.BMI = BMI;
     }
 
-    public  static float getBMI() {
+    public static float getBMI() {
         return BMI;
     }
 }
