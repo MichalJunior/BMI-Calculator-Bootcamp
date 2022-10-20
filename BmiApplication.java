@@ -10,12 +10,14 @@ public class BmiApplication {
             GUI.showMenu();
             switch (scanner.nextInt()) {
                 case 1 -> {
-                    bmiCalculator.showBMI();
+                    bmiCalculator.printBMI();
                     bmiDB.addToDB();
+                    bmiDB.printID();
                 }
                 case 2 -> {
                     System.out.print("Insert your ID:");
                     bmiDB.remindBMI(scanner.nextInt());
+
                 }
                 case 3 -> System.exit(0);
                 default -> System.out.println("Wrong choice");

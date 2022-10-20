@@ -3,22 +3,34 @@ import java.util.Random;
 
 public class BmiDB {
     private HashMap<Integer, Float> IMBmap = new HashMap<>();
-    BmiCalculator bmiCalculator = new BmiCalculator();
+
+    private int ID;
 
     public void addToDB() {
-        IMBmap.put(generateID(), bmiCalculator.getBMI());
+        IMBmap.put(generateID(), BmiCalculator.getBMI());
     }
 
-    public static int generateID() {
+    public int generateID() {
         Random random = new Random();
-        return random.nextInt(10000, 100000);
+        int id = random.nextInt(10000, 100000);
+        setID(id);
+        return id;
+
 
     }
 
     public void remindBMI(int userID) {
         if (IMBmap.containsKey(userID)) {
-            IMBmap.get(userID);
+            System.out.println(IMBmap.get(userID));
         } else System.out.println("----There is no user or invalid ID----");
     }
 
+    public void printID() {
+        System.out.println("Your ID: " + ID);
+    }
+
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }

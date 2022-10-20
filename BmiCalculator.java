@@ -1,29 +1,13 @@
 import java.util.Scanner;
 
 public class BmiCalculator {
-
-
-
-
-    private float BMI;
+    private static float BMI;
     private final Scanner scanner = new Scanner(System.in);
 
-    public int takeWeightFromUser() {
-
-        System.out.print("Podaj wagę w [kg]:");
-        return scanner.nextInt();
-    }
-
-    public float takeHeightFromUser() {
-        System.out.print("podaj wysokość w [m]:");
-        return scanner.nextFloat();
-    }
-
-    public void showBMI() {
-        System.out.println("Twoje BMI to: " + countBMI());
+    public void printBMI() {
+        System.out.println("Your BMI : " + countBMI());
 
     }
-
 
     private float countBMI() {
         int weight = takeWeightFromUser();
@@ -34,11 +18,22 @@ public class BmiCalculator {
 
     }
 
-    public void setBMI(float BMI) {
-        this.BMI = BMI;
+    public int takeWeightFromUser() {
+
+        System.out.print("Insert your weight[kg]: ");
+        return scanner.nextInt();
     }
 
-    public float getBMI() {
+    public float takeHeightFromUser() {
+        System.out.print("Insert yout Heigh[m]: ");
+        return scanner.nextFloat();
+    }
+
+    public void setBMI(float BMI) {
+        BmiCalculator.BMI = BMI;
+    }
+
+    public  static float getBMI() {
         return BMI;
     }
 }
